@@ -12,12 +12,12 @@ const gcd = (number1, number2) => {
 };
 
 const getTask = () => {
-  const randomNumber1 = _.random(range.begin, range.end);
-  const randomNumber2 = _.random(range.begin, range.end);
-  const answer = gcd(randomNumber1, randomNumber2);
+  const number1 = _.random(range.begin, range.end);
+  const number2 = _.random(range.begin, range.end);
+  const answer = gcd(number1, number2);
 
   return {
-    text: `${randomNumber1} ${randomNumber2}`,
+    text: `${number1} ${number2}`,
     answer: answer.toString(),
   };
 };

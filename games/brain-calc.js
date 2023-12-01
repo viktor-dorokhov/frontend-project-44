@@ -3,29 +3,29 @@ import startGame from '../src/index.js';
 import range from '../src/config.js';
 
 const getTask = () => {
-  const randomNumber1 = _.random(range.begin, range.end);
-  const randomNumber2 = _.random(range.begin, range.end);
-  const randomNumberOper = _.random(1, 3);
+  const number1 = _.random(range.begin, range.end);
+  const number2 = _.random(range.begin, range.end);
+  const numberOper = _.random(1, 3);
   let answer = '';
   let oper = '';
-  switch (randomNumberOper) {
+  switch (numberOper) {
     case 1:
       oper = '+';
-      answer = randomNumber1 + randomNumber2;
+      answer = number1 + number2;
       break;
     case 2:
       oper = '-';
-      answer = randomNumber1 - randomNumber2;
+      answer = number1 - number2;
       break;
     case 3:
       oper = '*';
-      answer = randomNumber1 * randomNumber2;
+      answer = number1 * number2;
       break;
     // no default
   }
 
   return {
-    text: `${randomNumber1} ${oper} ${randomNumber2}`,
+    text: `${number1} ${oper} ${number2}`,
     answer: answer.toString(),
   };
 };

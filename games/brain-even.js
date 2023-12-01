@@ -3,10 +3,10 @@ import startGame from '../src/index.js';
 import range from '../src/config.js';
 
 const getTask = () => {
-  const randomNumber = _.random(range.begin, range.end);
+  const number = _.random(range.begin, range.end);
   return {
-    text: randomNumber.toString(),
-    answer: randomNumber % 2 === 0 ? 'yes' : 'no',
+    text: number.toString(),
+    answer: number % 2 === 0 ? 'yes' : 'no',
   };
 };
 
