@@ -1,17 +1,12 @@
 import readlineSync from 'readline-sync';
 
-const round = () => {
+const round = (getTask) => {
   let result = false;
-  const randomLength = 100;
-  const randomStart = 1;
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  // get random int number from randomStart to (randomStart + maxRandom - 1)
-  const randomNumber = Math.floor(Math.random() * randomLength) + randomStart;
-  const isEven = randomNumber % 2 === 0 ? 'yes' : 'no';
-  console.log(`Question: ${randomNumber}`);
+  const task = getTask();
+  console.log(`Question: ${task.text}`);
   const answer = readlineSync.question('Your answer: ').trim().toLowerCase();
-  if (isEven !== answer) {
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${isEven}'.`);
+  if (task.answer.toLowerCase() !== answer) {
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${task.answer}'.`);
     result = false;
   } else {
     console.log('Correct!');
@@ -21,15 +16,16 @@ const round = () => {
   return result;
 };
 
-const app = () => {
+const startGame = (parameters) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
+  console.log(parameters.taskCondition);
   const roundsNumber = 3;
   let success = true;
   let i = 1;
   while (i <= roundsNumber) {
-    success = round();
+    success = round(parameters.taskGet);
     if (!success) {
       break;
     }
@@ -42,4 +38,4 @@ const app = () => {
   }
 };
 
-export default app;
+export default startGame;
