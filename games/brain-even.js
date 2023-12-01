@@ -1,10 +1,9 @@
 import _ from 'lodash';
 import startGame from '../src/index.js';
+import range from '../src/config.js';
 
 const getTask = () => {
-  const randomBegin = 1;
-  const randomEnd = 100;
-  const randomNumber = _.random(randomBegin, randomEnd);
+  const randomNumber = _.random(range.begin, range.end);
   return {
     text: randomNumber.toString(),
     answer: randomNumber % 2 === 0 ? 'yes' : 'no',

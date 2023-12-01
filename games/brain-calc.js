@@ -1,11 +1,10 @@
 import _ from 'lodash';
 import startGame from '../src/index.js';
+import range from '../src/config.js';
 
 const getTask = () => {
-  const randomBegin = 1;
-  const randomEnd = 100;
-  const randomNumber1 = _.random(randomBegin, randomEnd);
-  const randomNumber2 = _.random(randomBegin, randomEnd);
+  const randomNumber1 = _.random(range.begin, range.end);
+  const randomNumber2 = _.random(range.begin, range.end);
   const randomNumberOper = _.random(1, 3);
   let answer = '';
   let oper = '';
