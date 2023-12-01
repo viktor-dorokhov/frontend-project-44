@@ -13,8 +13,12 @@ const getProgression = (start, length, step) => {
 
 const getTask = () => {
   const progressionStart = _.random(range.begin, range.end);
-  const progressionLength = _.random(5, 15);
-  const progressionStep = _.random(1, 10);
+  const minProgressionLength = 5;
+  const maxProgressionLength = 15;
+  const progressionLength = _.random(minProgressionLength, maxProgressionLength);
+  const minProgressionStep = 1;
+  const maxProgressionStep = 10;
+  const progressionStep = _.random(minProgressionStep, maxProgressionStep);
   const missedNumberPosition = _.random(0, progressionLength - 1);
   const progression = getProgression(progressionStart, progressionLength, progressionStep);
   const missedNumber = progression[missedNumberPosition];
