@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import { roundsNumber } from './config.js';
 
 const round = (getTask) => {
   let result = false;
@@ -21,7 +22,6 @@ const startGame = (parameters) => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log(parameters.taskCondition);
-  const roundsNumber = 3;
   let success = true;
   let i = 1;
   while (i <= roundsNumber) {

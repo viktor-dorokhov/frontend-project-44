@@ -7,3 +7,4 @@ export const minProgressionLength = 5;
 export const maxProgressionLength = 15;
 export const minProgressionStep = 1;
 export const maxProgressionStep = 10;
+export const roundsNumber = 3;
