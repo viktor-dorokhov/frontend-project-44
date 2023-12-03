@@ -2,7 +2,7 @@ import _ from 'lodash';
 import { getRandomNumber } from '../utilities.js';
 import startGame from '../index.js';
 
-const getTask = () => {
+const getRoundSettings = () => {
   const number1 = getRandomNumber();
   const number2 = getRandomNumber();
   const oper = _.sample(['+', '-', '*']);
@@ -21,15 +21,15 @@ const getTask = () => {
   }
 
   return {
-    text: `${number1} ${oper} ${number2}`,
+    question: `${number1} ${oper} ${number2}`,
     answer: answer.toString(),
   };
 };
 
 const game = () => {
   startGame({
-    taskCondition: 'What is the result of the expression?',
-    taskGet: getTask,
+    description: 'What is the result of the expression?',
+    getRoundSettings,
   });
 };
 

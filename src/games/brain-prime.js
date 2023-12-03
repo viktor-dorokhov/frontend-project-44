@@ -1,32 +1,18 @@
-import { getRandomNumber } from '../utilities.js';
+import { getRandomNumber, isPrime } from '../utilities.js';
 import startGame from '../index.js';
 
-const isPrime = (number) => {
-  if (number < 2) {
-    return false;
-  }
-  const sqrt = Math.sqrt(number);
-  for (let i = 2; i <= sqrt; i += 1) {
-    if (number % i === 0) {
-      return false;
-    }
-  }
-
-  return true;
-};
-
-const getTask = () => {
+const getRoundSettings = () => {
   const number = getRandomNumber();
   return {
-    text: number.toString(),
+    question: number.toString(),
     answer: isPrime(number) ? 'yes' : 'no',
   };
 };
 
 const game = () => {
   startGame({
-    taskCondition: 'Answer "yes" if given number is prime. Otherwise answer "no".',
-    taskGet: getTask,
+    description: 'Answer "yes" if given number is prime. Otherwise answer "no".',
+    getRoundSettings,
   });
 };
 
