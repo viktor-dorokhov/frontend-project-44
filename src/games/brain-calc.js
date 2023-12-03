@@ -1,6 +1,6 @@
 import _ from 'lodash';
-import startGame from '../src/index.js';
-import range from '../src/config.js';
+import startGame from '../index.js';
+import range from '../config.js';
 
 const getTask = () => {
   const number1 = _.random(range.from, range.to);
