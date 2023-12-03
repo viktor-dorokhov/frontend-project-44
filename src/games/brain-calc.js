@@ -5,20 +5,16 @@ import range from '../config.js';
 const getTask = () => {
   const number1 = _.random(range.from, range.to);
   const number2 = _.random(range.from, range.to);
-  const numberOper = _.random(1, 3);
+  const oper = _.sample(['+', '-', '*']);
   let answer = '';
-  let oper = '';
-  switch (numberOper) {
-    case 1:
-      oper = '+';
+  switch (oper) {
+    case '+':
       answer = number1 + number2;
       break;
-    case 2:
-      oper = '-';
+    case '-':
       answer = number1 - number2;
       break;
-    case 3:
-      oper = '*';
+    case '*':
       answer = number1 * number2;
       break;
     // no default
