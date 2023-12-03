@@ -5,12 +5,12 @@ const round = (getTask) => {
   const task = getTask();
   console.log(`Question: ${task.text}`);
   const answer = readlineSync.question('Your answer: ').trim().toLowerCase();
-  if (task.answer.toLowerCase() !== answer) {
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${task.answer}'.`);
-    result = false;
-  } else {
+  if (task.answer.toLowerCase() === answer) {
     console.log('Correct!');
     result = true;
+  } else {
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${task.answer}'.`);
+    result = false;
   }
 
   return result;

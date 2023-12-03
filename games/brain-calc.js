@@ -3,8 +3,8 @@ import startGame from '../src/index.js';
 import range from '../src/config.js';
 
 const getTask = () => {
-  const number1 = _.random(range.begin, range.end);
-  const number2 = _.random(range.begin, range.end);
+  const number1 = _.random(range.from, range.to);
+  const number2 = _.random(range.from, range.to);
   const numberOper = _.random(1, 3);
   let answer = '';
   let oper = '';

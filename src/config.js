@@ -1,4 +1,5 @@
+// default range for a random number
 export default {
-  begin: 1,
-  end: 100,
+  from: 1,
+  to: 100,
 };

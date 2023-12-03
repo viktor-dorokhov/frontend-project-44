@@ -16,7 +16,7 @@ const isPrime = (number) => {
 };
 
 const getTask = () => {
-  const number = _.random(range.begin, range.end);
+  const number = _.random(range.from, range.to);
   return {
     text: number.toString(),
     answer: isPrime(number) ? 'yes' : 'no',

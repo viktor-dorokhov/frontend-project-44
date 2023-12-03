@@ -12,8 +12,8 @@ const gcd = (number1, number2) => {
 };
 
 const getTask = () => {
-  const number1 = _.random(range.begin, range.end);
-  const number2 = _.random(range.begin, range.end);
+  const number1 = _.random(range.from, range.to);
+  const number2 = _.random(range.from, range.to);
   const answer = gcd(number1, number2);
 
   return {

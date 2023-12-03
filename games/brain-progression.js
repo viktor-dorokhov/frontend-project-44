@@ -12,7 +12,7 @@ const getProgression = (start, length, step) => {
 };
 
 const getTask = () => {
-  const progressionStart = _.random(range.begin, range.end);
+  const progressionStart = _.random(range.from, range.to);
   const minProgressionLength = 5;
   const maxProgressionLength = 15;
   const progressionLength = _.random(minProgressionLength, maxProgressionLength);
