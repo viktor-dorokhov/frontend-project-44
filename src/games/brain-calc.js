@@ -1,10 +1,10 @@
 import _ from 'lodash';
+import { getRandomNumber } from '../utilities.js';
 import startGame from '../index.js';
-import range from '../config.js';
 
 const getTask = () => {
-  const number1 = _.random(range.from, range.to);
-  const number2 = _.random(range.from, range.to);
+  const number1 = getRandomNumber();
+  const number2 = getRandomNumber();
   const oper = _.sample(['+', '-', '*']);
   let answer = '';
   switch (oper) {

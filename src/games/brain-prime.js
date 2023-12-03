@@ -1,6 +1,5 @@
-import _ from 'lodash';
+import { getRandomNumber } from '../utilities.js';
 import startGame from '../index.js';
-import range from '../config.js';
 
 const isPrime = (number) => {
   if (number < 2) {
@@ -17,7 +16,7 @@ const isPrime = (number) => {
 };
 
 const getTask = () => {
-  const number = _.random(range.from, range.to);
+  const number = getRandomNumber();
   return {
     text: number.toString(),
     answer: isPrime(number) ? 'yes' : 'no',

@@ -1,6 +1,5 @@
-import _ from 'lodash';
+import { getRandomNumber } from '../utilities.js';
 import startGame from '../index.js';
-import range from '../config.js';
 
 // recursive solution, using the Euclidean algorithm
 const gcd = (number1, number2) => {
@@ -12,8 +11,8 @@ const gcd = (number1, number2) => {
 };
 
 const getTask = () => {
-  const number1 = _.random(range.from, range.to);
-  const number2 = _.random(range.from, range.to);
+  const number1 = getRandomNumber();
+  const number2 = getRandomNumber();
   const answer = gcd(number1, number2);
 
   return {
