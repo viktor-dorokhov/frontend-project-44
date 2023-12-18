@@ -11,3 +11,5 @@ rules:
     - error
     - ignorePackages
     - js: always
+ignorePatterns: 
+  "__tests__/*"
