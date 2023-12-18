@@ -1,4 +1,4 @@
-install: # установить зависимости
+install: # install dependencies
 	npm ci
 
 publish:
@@ -6,6 +6,12 @@ publish:
 
 lint:
 	npx eslint .
+
+test:
+	npx jest
+
+test-coverage:
+	npx jest --coverage
 
 brain-games:
 	node bin/brain-games.js

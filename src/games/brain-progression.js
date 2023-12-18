@@ -1,9 +1,9 @@
 import _ from 'lodash';
-import { getProgression } from '../util.js';
+import { getRandomProgression } from '../util.js';
 import startGame from '../index.js';
 
 const getRoundData = () => {
-  const progression = getProgression();
+  const progression = getRandomProgression();
   const missedNumberPosition = _.random(0, progression.length - 1);
   const missedNumber = progression[missedNumberPosition];
   progression[missedNumberPosition] = '..';

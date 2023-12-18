@@ -3,7 +3,7 @@ import * as config from './config.js';
 
 export const getRandomNumber = () => _.random(config.numberRange.from, config.numberRange.to);
 
-export const getProgression = () => {
+export const getRandomProgression = () => {
   const progressionStart = getRandomNumber();
   const progressionLength = _.random(config.minProgressionLength, config.maxProgressionLength);
   const progressionStep = _.random(config.minProgressionStep, config.maxProgressionStep);
@@ -15,6 +15,7 @@ export const getProgression = () => {
   return result;
 };
 
+// greatest common divisor
 // recursive solution, using the Euclidean algorithm
 export const gcd = (number1, number2) => {
   if (!number2) {
