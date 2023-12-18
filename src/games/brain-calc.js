@@ -1,8 +1,8 @@
 import _ from 'lodash';
-import { getRandomNumber } from '../utilities.js';
+import { getRandomNumber } from '../util.js';
 import startGame from '../index.js';
 
-const getRoundSettings = () => {
+const getRoundData = () => {
   const number1 = getRandomNumber();
   const number2 = getRandomNumber();
   const oper = _.sample(['+', '-', '*']);
@@ -26,11 +26,11 @@ const getRoundSettings = () => {
   };
 };
 
-const game = () => {
-  startGame({
-    description: 'What is the result of the expression?',
-    getRoundSettings,
-  });
+const playGame = () => {
+  startGame(
+    'What is the result of the expression?',
+    getRoundData,
+  );
 };
 
-export default game;
+export default playGame;

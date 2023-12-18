@@ -1,13 +1,12 @@
 import readlineSync from 'readline-sync';
 import { roundsNumber } from './config.js';
 
-const round = (getRoundSettings) => {
+const startRound = (fnGetRoundData) => {
   let result = false;
-  const roundSettings = getRoundSettings();
-  console.log(`Question: ${roundSettings.question}`);
+  const { question: roundQuestion, answer: roundAnswer } = fnGetRoundData();
+  console.log(`Question: ${roundQuestion}`);
   const userAnswer = readlineSync.question('Your answer: ').trim().toLowerCase();
-  const roundAnswer = roundSettings.answer.toLowerCase();
-  if (roundAnswer === userAnswer) {
+  if (roundAnswer.toLowerCase() === userAnswer) {
     console.log('Correct!');
     result = true;
   } else {
@@ -18,15 +17,15 @@ const round = (getRoundSettings) => {
   return result;
 };
 
-const startGame = (settings) => {
+const startGame = (description, fnGetRoundData) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
-  console.log(settings.description);
+  console.log(description);
   let success = true;
   let i = 1;
   while (i <= roundsNumber) {
-    success = round(settings.getRoundSettings);
+    success = startRound(fnGetRoundData);
     if (!success) {
       break;
     }

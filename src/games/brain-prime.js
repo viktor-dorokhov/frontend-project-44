@@ -1,7 +1,7 @@
-import { getRandomNumber, isPrime } from '../utilities.js';
+import { getRandomNumber, isPrime } from '../util.js';
 import startGame from '../index.js';
 
-const getRoundSettings = () => {
+const getRoundData = () => {
   const number = getRandomNumber();
   return {
     question: number.toString(),
@@ -9,11 +9,11 @@ const getRoundSettings = () => {
   };
 };
 
-const game = () => {
-  startGame({
-    description: 'Answer "yes" if given number is prime. Otherwise answer "no".',
-    getRoundSettings,
-  });
+const playGame = () => {
+  startGame(
+    'Answer "yes" if given number is prime. Otherwise answer "no".',
+    getRoundData,
+  );
 };
 
-export default game;
+export default playGame;

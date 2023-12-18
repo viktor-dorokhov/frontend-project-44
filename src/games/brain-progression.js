@@ -1,8 +1,8 @@
 import _ from 'lodash';
-import { getProgression } from '../utilities.js';
+import { getProgression } from '../util.js';
 import startGame from '../index.js';
 
-const getRoundSettings = () => {
+const getRoundData = () => {
   const progression = getProgression();
   const missedNumberPosition = _.random(0, progression.length - 1);
   const missedNumber = progression[missedNumberPosition];
@@ -14,11 +14,11 @@ const getRoundSettings = () => {
   };
 };
 
-const game = () => {
-  startGame({
-    description: 'What number is missing in the progression?',
-    getRoundSettings,
-  });
+const playGame = () => {
+  startGame(
+    'What number is missing in the progression?',
+    getRoundData,
+  );
 };
 
-export default game;
+export default playGame;
