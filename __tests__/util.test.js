@@ -1,10 +1,17 @@
+/* eslint-disable object-curly-newline */
+
+import { test, expect } from '@jest/globals';
 import { getRandomNumber, getRandomProgression, gcd, isPrime } from '../src/util.js';
 import * as config from '../src/config.js';
 
-const numberRangeFrom = config.numberRange.from;
-const numberRangeTo = config.numberRange.to;
-const minProgressionLength = config.minProgressionLength;
-const maxProgressionLength = config.maxProgressionLength;
+const {
+  numberRange: {
+    from: numberRangeFrom,
+    to: numberRangeTo,
+  },
+  minProgressionLength,
+  maxProgressionLength,
+} = config;
 
 test.each([
   getRandomNumber(),
